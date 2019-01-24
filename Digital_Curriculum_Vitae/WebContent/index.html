@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="script.js"></script>
+
+<style>
+
+.home {
+	
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(image/city-2.jpg);
+	background-size: cover;
+	height: 100vh;
+	background-position: center;
+}
+
+
+body{ 
+    display: block;
+    margin: 0px;
+}
+
+footer {
+    background-color: #708090;
+    padding: 8px 29px;
+    text-align: center;
+    color: white;
+}
+body{ 
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #708090;
+    
+    
+     
+}
+
+li {
+    float: right;
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 29px; 
+    text-decoration: none;
+   
+}
+
+li a:hover {
+    border: 1px solid white;
+}
+.modal-content animate.h1{
+    margin: 100;
+    padding: 40;
+}
+#h1{
+    text-align: center;
+}
+#validPass, #validRpass{
+ color:black;
+ text-align: right;
+ float: right;
+ 
+}
+</style>
+<link href="css/style3.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+  <ul >
+  <li><a onclick="document.getElementById('id02').style.display='block'">Sign up</a></li>
+  <li><a onclick="document.getElementById('id01').style.display='block'">Sign in </a></li>
+   <li><a href="#">Contact</a></li>
+   <li><a href="#">About</a></li>
+   <li class="active"><a href="index.html">Home</a></li>
+ </ul>
+ </header>
+ <div class="home"> 
+ <div id="id01" class="modal">
+   
+  <form class="modal-content animate" action="login" method="post" >
+     <div id="h1"><h1>Sign in</h1></div>
+    <div class="container">
+      <label for="uemail"><b>Email</b></label>
+     <input type="email" placeholder="Enter email" name="uemail" required>
+
+      <label for="pass"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="upass" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+
+<form action="registration" method="post" class="modal-content animate">
+  <div class="container">
+    <div id="h1"><h1>Create Account</h1></div>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+
+    <label for="pass"><b>Password</b></label>
+    <input onchange="checkPass()" type="password" placeholder="Enter Password" name="pass" id="pass" required>
+     <small><span id="validPass"></span></small><br>
+    <label for="reTypePass"><b>Repeat Password</b></label>
+    <input disabled onchange="checkRPass()" type="password" placeholder="Repeat Password" id="reTypePass" name="reTypePass" required >
+    <small><span id="validRpass"></span></small><br>
+    <label for="fname"><b>First or Given Name</b></label>
+    <input type="text" name="fname"  placeholder="Enter First or Given Name" required>
+    
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" name="lname"  placeholder="Enter Last Name" required>
+    
+    <label for="dateOfBirth"><b>Date of Birth</b></label><br>
+    <input type="date" name="dateOfBirth" required><br><br>
+    
+    <label for="gender"><b>Gender</b></label>
+    <input type="radio" name="gender" id="male" value="Male" checked> Male <input type="radio" name="gender" id="female" value="Female" > Female
+    
+    
+    
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms and Privacy</a>.</p>
+
+    <button type="submit" id="sub" class="registerbtn" disabled >Register</button>
+  </div>
+  <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Already have an account? <a style="color:#4CAF50" onclick="document.getElementById('id02').style.display='none',document.getElementById('id01').style.display='block'">Sign in</a></span>
+    </div>
+</form>
+
+
+</div>
+
+
+
+<script>
+// Get the modal
+function loginpage{
+	document.getElementById('id02').style.display="none";
+	document.getElementById('id01').style.display="block";
+	
+}
+
+	
+
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+ 
+ 
+ 
+ 
+ 
+  </div>
+ <footer>
+ <h5>Copyright © 2018 Parvez. All Rights Reserved.</h5>
+ </footer>
+</body>
+</html>
